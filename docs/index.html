@@ -1,10 +1,252 @@
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <div>
-      Test KIBIT Pages page.
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://preview-ki-course-site.zarytskyi.workers.dev/ -->
+<html lang="uk"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Матеріали курсів · КІБІТ</title>
+<meta name="description" content="Конспекти занять фахового коледжу КІБІТ, спеціальність 123 «Комп'ютерна інженерія».">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Матеріали курсів · КІБІТ_files/css2" rel="stylesheet">
+<style>
+/* Оболонка сайту навмисно нейтральна: колір на цій сторінці належить
+   предметам, і кожна картка приносить свій. */
+:root{
+  --bg:#F7F7F4; --panel:#FFFFFF; --panel-2:#FBFBF9;
+  --ink:#14181C; --ink-2:#454C53; --ink-3:#71787E;
+  --line:#E3E2DC; --line-2:#EFEEE9;
+  --shell:#3E5364;
+  --font-display:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-body:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --shadow:0 1px 2px rgba(20,24,28,.04), 0 8px 24px -12px rgba(20,24,28,.14);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1216; --panel:#171B20; --panel-2:#13171C;
+    --ink:#E9EDF1; --ink-2:#B4BCC4; --ink-3:#878F97;
+    --line:#272D34; --line-2:#1F242A;
+    --shell:#93B2C8;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1216; --panel:#171B20; --panel-2:#13171C;
+  --ink:#E9EDF1; --ink-2:#B4BCC4; --ink-3:#878F97;
+  --line:#272D34; --line-2:#1F242A;
+  --shell:#93B2C8;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:1rem;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+h1,h2{margin:0;text-wrap:balance}
+
+.topbar{
+  display:flex;align-items:center;gap:1rem;
+  padding:.85rem clamp(1rem,4vw,2.5rem);
+  border-bottom:1px solid var(--line);background:var(--panel-2);
+  position:sticky;top:0;z-index:10;
+}
+.topbar__brand{
+  font-family:var(--font-mono);font-size:.75rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3);
+}
+.spacer{flex:1}
+.btn{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-2);
+  background:var(--panel);border:1px solid var(--line);border-radius:.4rem;
+  padding:.4rem .7rem;cursor:pointer;transition:border-color .16s,color .16s;
+}
+.btn:hover{color:var(--ink);border-color:var(--ink-3)}
+
+.wrap{max-width:60rem;margin:0 auto;padding:clamp(2.5rem,7vw,4.5rem) clamp(1rem,4vw,2.5rem) 4rem}
+
+.hero__eyebrow{
+  font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--shell);margin-bottom:.9rem;
+}
+.hero__title{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(2rem,5.5vw,3.1rem);line-height:1.1;letter-spacing:-.02em;
+}
+.hero__lede{
+  margin:1.1rem 0 0;max-width:38rem;
+  font-size:1.0625rem;line-height:1.7;color:var(--ink-2);
+}
+
+.grid{
+  display:grid;gap:1.1rem;margin-top:clamp(2.2rem,6vw,3.2rem);
+  grid-template-columns:1fr;
+}
+@media (min-width:54rem){ .grid{grid-template-columns:1fr 1fr} }
+
+.card{
+  --accent:var(--card-accent,var(--shell));
+  display:flex;flex-direction:column;gap:.55rem;
+  position:relative;overflow:hidden;
+  padding:1.5rem 1.5rem 1.35rem;
+  background:var(--panel);border:1px solid var(--line);border-radius:.7rem;
+  box-shadow:var(--shadow);
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .card{--accent:var(--card-accent-dark,var(--shell))}
+}
+:root[data-theme="dark"] .card{--accent:var(--card-accent-dark,var(--shell))}
+.card::before{
+  content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--accent);
+}
+a.card:hover{
+  transform:translateY(-2px);border-color:var(--accent);
+  box-shadow:0 2px 4px rgba(20,24,28,.05), 0 16px 34px -16px rgba(20,24,28,.28);
+}
+a.card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.card--soon{opacity:.72}
+
+.card__chip{
+  align-self:flex-start;
+  font-family:var(--font-mono);font-size:.68rem;font-weight:500;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--accent);
+}
+.card__title{
+  font-family:var(--font-display);font-weight:600;
+  font-size:1.28rem;line-height:1.25;letter-spacing:-.01em;
+}
+.card__desc{margin:.15rem 0 0;font-size:.925rem;line-height:1.6;color:var(--ink-2)}
+.card__soon{
+  align-self:flex-start;margin-top:.2rem;
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:.3rem;padding:.15rem .45rem;
+}
+
+/* Смужка каже те, чого не скаже жоден заголовок: скільки курсу вже
+   опубліковано. margin-top:auto притискає її до низу, щоб картки різної
+   висоти вирівнювались по цій лінії. */
+.card__progress{
+  margin-top:auto;position:relative;height:4px;border-radius:2px;
+  background:var(--line-2);border:1px solid var(--line);
+}
+.card__progress>span{
+  display:block;height:100%;border-radius:2px;background:var(--accent);
+}
+.card__facts{
+  display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;margin-top:.7rem;
+  font-family:var(--font-mono);font-size:.74rem;color:var(--ink-3);
+}
+.card__facts b{color:var(--ink-2);font-weight:700;font-variant-numeric:tabular-nums}
+.card__go{
+  margin-top:.9rem;
+  font-family:var(--font-mono);font-size:.75rem;font-weight:500;
+  letter-spacing:.06em;color:var(--accent);
+}
+a.card:hover .card__go span{ margin-left:.25em }
+.card__go span{display:inline-block;transition:margin-left .16s ease}
+
+footer{
+  border-top:1px solid var(--line);background:var(--panel-2);
+  padding:1.6rem clamp(1rem,4vw,2.5rem);
+  font-family:var(--font-mono);font-size:.74rem;line-height:1.9;color:var(--ink-3);
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important;animation:none !important}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="topbar__brand">Фаховий коледж КІБІТ</span>
+  <span class="spacer"></span>
+  <button class="btn" id="theme" type="button">Тема</button>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="hero__eyebrow">Спеціальність 123 · Комп'ютерна інженерія</div>
+    <h1 class="hero__title">Матеріали курсів</h1>
+    <p class="hero__lede">Конспекти занять фахового коледжу. Виберіть предмет.</p>
+  </section>
+
+  <div class="grid">
+  <a class="card" href="https://preview-ki-course-site.zarytskyi.workers.dev/java/" style="--card-accent:#4A4494;--card-accent-dark:#9E97E8">
+    <span class="card__chip">Java</span>
+    <h2 class="card__title">Java</h2>
+    <p class="card__desc">Мова Java до об'єктів: типи й змінні, оператори, розгалуження й цикли, методи, масиви, рядки, лямбди. Вирівнювальний блок на вісім пар перед курсами об'єктно-орієнтованого програмування та розробки вебсервісів.</p>
+    <div class="card__progress" role="img" aria-label="опубліковано 8 з 8 занять">
+      <span style="width:100%"></span>
     </div>
-  </body>
-</html>
+    <div class="card__facts">
+      <span><b>8</b>&nbsp;з&nbsp;8 занять</span>
+      <span><b>16</b>&nbsp;год аудиторних</span>
+      <span>Java 21</span>
+    </div>
+    <span class="card__go">Відкрити курс <span aria-hidden="true">→</span></span>
+  </a>
+
+  <a class="card" href="https://preview-ki-course-site.zarytskyi.workers.dev/oop/" style="--card-accent:#A74D18;--card-accent-dark:#E39A4D">
+    <span class="card__chip">ООП</span>
+    <h2 class="card__title">Об'єктно-орієнтоване програмування</h2>
+    <p class="card__desc">Java як інструмент проєктування: класи й об'єкти, наслідування та поліморфізм, інкапсуляція, обробка винятків, узагальнення й колекції, багатопоточність, принципи якісного коду та патерни проєктування.</p>
+    <div class="card__progress" role="img" aria-label="опубліковано 11 з 25 занять">
+      <span style="width:44%"></span>
+    </div>
+    <div class="card__facts">
+      <span><b>11</b>&nbsp;з&nbsp;25 занять</span>
+      <span><b>64</b>&nbsp;год аудиторних</span>
+      <span>Java</span>
+    </div>
+    <span class="card__go">Відкрити курс <span aria-hidden="true">→</span></span>
+  </a>
+
+  <a class="card" href="https://preview-ki-course-site.zarytskyi.workers.dev/daml/" style="--card-accent:#0D727B;--card-accent-dark:#3FC0C9">
+    <span class="card__chip">Аналіз даних</span>
+    <h2 class="card__title">Аналіз даних та ML</h2>
+    <p class="card__desc">Аналітичний конвеєр у Python: отримання даних із реляційних і нереляційних баз, підготовка й трансформація таблиць у Pandas, візуалізація в Matplotlib і Seaborn, перші моделі машинного навчання.</p>
+    <div class="card__progress" role="img" aria-label="опубліковано 14 з 14 занять">
+      <span style="width:100%"></span>
+    </div>
+    <div class="card__facts">
+      <span><b>14</b>&nbsp;з&nbsp;14 занять</span>
+      <span><b>32</b>&nbsp;год аудиторних</span>
+      <span>Python</span>
+    </div>
+    <span class="card__go">Відкрити курс <span aria-hidden="true">→</span></span>
+  </a>
+  </div>
+</div>
+
+<footer>
+  Фаховий коледж Київського інституту бізнесу та технологій<br>
+  Матеріали оновлюються протягом семестру.
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{
+    var saved=localStorage.getItem('oop-theme');
+    if(saved==='dark'||saved==='light') root.setAttribute('data-theme',saved);
+  }catch(e){}
+  btn.addEventListener('click',function(){
+    var isDark=root.getAttribute('data-theme')==='dark';
+    if(!root.hasAttribute('data-theme'))
+      isDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var next=isDark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('oop-theme',next); }catch(e){}
+  });
+})();
+</script>
+
+
+</body></html>
